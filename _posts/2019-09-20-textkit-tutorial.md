@@ -3,15 +3,15 @@
 今天想教大家使用 TextKit 製作一款橫向閱讀的 Reader。
 
 ## Demo 預覽
-![](./2019-09-20-textkit-tutorial/Simulator%20Screen%20Shot%20-%20iPhone%20X%CA%80%20-%202019-09-20%20at%2011.27.16.png)
-![](./2019-09-20-textkit-tutorial/Simulator%20Screen%20Shot%20-%20iPhone%20X%CA%80%20-%202019-09-20%20at%2011.27.19.png)
-![](./2019-09-20-textkit-tutorial/Simulator%20Screen%20Shot%20-%20iPhone%20X%CA%80%20-%202019-09-20%20at%2011.27.22.png)
+![](/assets/images/2019-09-20-textkit-tutorial/Simulator%20Screen%20Shot%20-%20iPhone%20X%CA%80%20-%202019-09-20%20at%2011.27.16.png)
+![](/assets/images/2019-09-20-textkit-tutorial/Simulator%20Screen%20Shot%20-%20iPhone%20X%CA%80%20-%202019-09-20%20at%2011.27.19.png)
+![](/assets/images/2019-09-20-textkit-tutorial/Simulator%20Screen%20Shot%20-%20iPhone%20X%CA%80%20-%202019-09-20%20at%2011.27.22.png)
 
 ## 什麼是 TextKit
 TextKit 是一個管理文字儲存，以及執行以文字為基礎內容的自定義佈局的強大工具。這其中有四大類需要認識和掌握，分別是 NSTextStorage，NSLayoutManager ，NSTextContainer 以及平台對應的 TextView。
 
 TextKit 框架的位置：
-![](./2019-09-20-textkit-tutorial/text_kit_arch_2x.png)
+![](/assets/images/2019-09-20-textkit-tutorial/text_kit_arch_2x.png)
 
 
 ## NSTextStorage
@@ -37,7 +37,7 @@ TextKit 中的 TextView，需要依據不同平台，來初始化不同的 view 
 ## 四者關係
 在 Text Programming Guide 中有一張非常出名的圖用來表示四者關係：
 
-![](./2019-09-20-textkit-tutorial/textkitarchitecture_2x.png)
+![](/assets/images/2019-09-20-textkit-tutorial/textkitarchitecture_2x.png)
 
 在 code 中的呈現基本如下：
 ```swift
@@ -65,7 +65,7 @@ PlaygroundPage.current.liveView = textView
 由於我們不使用 Storyboard，也請麻煩刪除掉 **Main.storyboard** 以及對應的 storyboard 初始化資料。另外也刪除掉 **ViewController.swift**，在做任何開發時，我們還是希望擁有一個好的命名習慣。
 
 你的 Xcode Project 看起來基本上會像這樣：
-![](./2019-09-20-textkit-tutorial/Screen%20Shot%202019-09-20%20at%2012.53.36%20PM.png)
+![](/assets/images/2019-09-20-textkit-tutorial/Screen%20Shot%202019-09-20%20at%2012.53.36%20PM.png)
 
 右擊在 **AppDelegate.swift** 上，選擇 New File 並選擇 **Swift File**，命名為 **ReaderViewController**，並替換掉裡面的全部內容為以下 code：
 ```swift
@@ -121,7 +121,7 @@ private func fullContent() -> String {
 
 > PS: 如果你遇到 App 運行崩潰的情況，請前往 Project Navigator - Targets - Reader - Build Phases - Copy BundleResources 中檢查拖拽進來的檔案是否也呈現在其中，如果沒有就按下方的加號添加進去。  
 
-![](./2019-09-20-textkit-tutorial/Screen%20Shot%202019-09-20%20at%203.31.01%20PM.png)
+![](/assets/images/2019-09-20-textkit-tutorial/Screen%20Shot%202019-09-20%20at%203.31.01%20PM.png)
 
 ## Setup Reader
 在 **ReaderViewController** 中增加 `let contentView = UIScrollView()` ，這個 view 將被我們用來放置文字滾動的部分，同時追加 setupContentView() 的方法，用來設定我們的 contentView：
@@ -141,7 +141,7 @@ private func setupContentView() {
 ```
 
 運行完你應該會看到一個 orange 顏色的畫面：
-![](./2019-09-20-textkit-tutorial/Simulator%20Screen%20Shot%20-%20iPhone%20X%CA%80%20-%202019-09-20%20at%2016.31.03.png)
+![](/assets/images/2019-09-20-textkit-tutorial/Simulator%20Screen%20Shot%20-%20iPhone%20X%CA%80%20-%202019-09-20%20at%2016.31.03.png)
 
 
 > 記得將 setupContentView 在 viewDidLoad() 時執行。  
@@ -235,7 +235,7 @@ repeat {
 
 將 **setupReader()** 放在 **viewDidLoad** 中運行：
 
-![](./2019-09-20-textkit-tutorial/Simulator%20Screen%20Shot%20-%20iPhone%20X%CA%80%20-%202019-09-20%20at%2016.31.03%202.png)
+![](/assets/images/2019-09-20-textkit-tutorial/Simulator%20Screen%20Shot%20-%20iPhone%20X%CA%80%20-%202019-09-20%20at%2016.31.03%202.png)
 
 欸？為什麼還是什麼文字都沒有？這裡我們還少做了兩件事情：
 - 計算完並放把每一個 textView 放入 content view 後，我們需要告訴 content view 你的 content size 是多少
@@ -263,7 +263,7 @@ override func viewDidLayoutSubviews() {
 
 **viewDidLayoutSubviews()** 是告訴我們 view 已經把我們底下的 subviews 們都佈局好了，這樣我們就可以取得到正確的 view size 了。
 
-![](./2019-09-20-textkit-tutorial/Simulator%20Screen%20Shot%20-%20iPhone%20X%CA%80%20-%202019-09-20%20at%2016.44.23.png)
+![](/assets/images/2019-09-20-textkit-tutorial/Simulator%20Screen%20Shot%20-%20iPhone%20X%CA%80%20-%202019-09-20%20at%2016.44.23.png)
 
 ## Update Style
 現在我們還有幾個問題需要彌補：
@@ -312,7 +312,7 @@ let attributedString = NSAttributedString(
 
 現在再運行一下，是不是舒服多啦？
 
-![](./2019-09-20-textkit-tutorial/Simulator%20Screen%20Shot%20-%20iPhone%20X%CA%80%20-%202019-09-20%20at%2016.57.39.png)
-![](./2019-09-20-textkit-tutorial/Simulator%20Screen%20Shot%20-%20iPhone%20X%CA%80%20-%202019-09-20%20at%2016.57.12.png)
+![](/assets/images/2019-09-20-textkit-tutorial/Simulator%20Screen%20Shot%20-%20iPhone%20X%CA%80%20-%202019-09-20%20at%2016.57.39.png)
+![](/assets/images/2019-09-20-textkit-tutorial/Simulator%20Screen%20Shot%20-%20iPhone%20X%CA%80%20-%202019-09-20%20at%2016.57.12.png)
 
 以上就是這篇教程的全部內容了，全部代碼我會放在 [Arcovv/TextKit-Tutorial · GitHub](https://github.com/Arcovv/TextKit-Tutorial)，歡迎提問與指點！
