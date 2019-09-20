@@ -16,9 +16,9 @@
 title: Arco's Blog
 email: yiyezhihen@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  一名正在嘗試自由職業的 iOS 開發者，有任何需求歡迎和我聯繫！
+  擅長 Swift / RxSwift 以及 Functional Programming 的愛好者。
+  目前正在學習 SwiftUI / Swift with Server / Unity 開發。
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: arco_vv
