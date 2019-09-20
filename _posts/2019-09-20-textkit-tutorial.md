@@ -1,5 +1,9 @@
-# 使用 TextKit 製作橫向滾動 Reader
-
+---
+layout: post
+title:  "使用 TextKit 製作橫向滾動 Reader"
+date:   2019-09-20 17:37:49 +0800
+categories: iOS
+---
 今天想教大家使用 TextKit 製作一款橫向閱讀的 Reader。
 
 ## Demo 預覽
